@@ -903,7 +903,7 @@
     const fullContext = buildFullContext(extracted) + (websiteSearchCtx ? `\n\n=== WEBSITE SEARCH RESULTS ===\n${websiteSearchCtx}\n` : "");
 
     try {
-      const res = await fetch("https://cavanal-ai-backend.onrender.com", {
+      const res = await fetch("https://cavanal-ai-backend.onrender.com/chat", {
         method:"POST", headers:{"Content-Type":"application/json"},
         body:JSON.stringify({ query:text, pageContext:fullContext, pageUrl:extracted.url, pageTitle:extracted.title, conversationHistory:convHistory.slice(-6), importantPages:extracted.importantPages, content:extracted.navLinks.slice(0,30).map(l=>({text:l.text,link:l.href})) })
       });
