@@ -921,7 +921,7 @@
       convHistory.push({ role:"assistant", content:replyText });
     } catch(e) {
       removeTypingAll();
-      addMsgToAll("⚠️ Cannot connect to server. Make sure Spring Boot is running on port 8080.", "bot");
+      addMsgToAll("⚠️ Cannot connect to server. Make sure Spring Boot is running .", "bot");
     }
   }
 
