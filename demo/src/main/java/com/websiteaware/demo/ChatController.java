@@ -12,6 +12,7 @@ import java.util.concurrent.*;
 @RestController
 @CrossOrigin
 public class ChatController {
+    private static final String PYTHON_SERVICE = System.getenv("PYTHON_SERVICE_URL");
 
     private static final List<ApiConfig> API_CHAIN = new ArrayList<>(Arrays.asList(
             // ── GROQ (fastest, free 30 req/min) ──
