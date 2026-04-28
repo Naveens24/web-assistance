@@ -6,7 +6,7 @@
   "permissions": ["activeTab", "scripting"],
 
   "host_permissions": [
-    "https://cavanal-ai-backend.onrender.com*",
+    "https://cavanal-ai-backend.onrender.com/*",
     "<all_urls>"
   ],
 
