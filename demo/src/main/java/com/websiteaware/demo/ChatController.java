@@ -16,36 +16,34 @@ public class ChatController {
 
     private static final List<ApiConfig> API_CHAIN = new ArrayList<>(Arrays.asList(
             // ── GROQ (fastest, free 30 req/min) ──
-            new ApiConfig("API_KEY_1", "llama-3.3-70b-versatile",
-                    "https://api.groq.com/openai/v1/chat/completions", "groq"),
-            new ApiConfig("API_KEY_2", "llama-3.3-70b-versatile",
-                    "https://api.groq.com/openai/v1/chat/completions", "groq"),
-            new ApiConfig("API_KEY_1", "gemma2-9b-it",
+            new ApiConfig(System.getenv("API_KEY_1"), "llama-3.3-70b-versatile",
                     "https://api.groq.com/openai/v1/chat/completions", "groq"),
 
-            new ApiConfig("API_KEY_3", "llama-3.3-70b-versatile",
+            new ApiConfig(System.getenv("API_KEY_2"), "llama-3.3-70b-versatile",
                     "https://api.groq.com/openai/v1/chat/completions", "groq"),
 
+            new ApiConfig(System.getenv("API_KEY_3"), "llama-3.3-70b-versatile",
+                    "https://api.groq.com/openai/v1/chat/completions", "groq"),
             new ApiConfig(
-                    "API_KEY_1",
+                    System.getenv("API_KEY_1"),
                     "openai/gpt-oss-120b",
                     "https://api.groq.com/openai/v1/chat/completions",
                     "groq"),
 
             new ApiConfig(
-                    "API_KEY_1",
+                    System.getenv("API_KEY_2"),
                     "meta-llama/llama-4-scout-17b-16e-instruct",
                     "https://api.groq.com/openai/v1/chat/completions",
                     "groq"),
 
             new ApiConfig(
-                    "API_KEY_1",
+                    System.getenv("API_KEY_1"),
                     "qwen/qwen3-32b",
                     "https://api.groq.com/openai/v1/chat/completions",
                     "groq"),
 
             new ApiConfig(
-                    "API_KEY_1",
+                    System.getenv("API_KEY_1"),
                     "llama-3.1-8b-instant",
                     "https://api.groq.com/openai/v1/chat/completions",
                     "groq")
