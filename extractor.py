@@ -1,5 +1,5 @@
 """
-AVA Assistant - Python Extraction Microservice
+Cavanal AI - Python Extraction Microservice
 Runs on port 5000 alongside Java Spring Boot (port 8080)
 Handles: PDF text, images (OCR), deep page crawling
 
@@ -41,7 +41,7 @@ def crawl():
     """
     data = request.json
     url = data.get("url", "")
-    depth = data.get("depth", 1)  # how many sub-pages to follow
+    depth = data.get("depth", 2)  # how many sub-pages to follow
 
     if not url:
         return jsonify({"error": "No URL provided"}), 400
@@ -53,7 +53,7 @@ def crawl():
         return jsonify({"error": str(e), "trace": traceback.format_exc()}), 500
 
 
-def crawl_page(url, depth=1):
+def crawl_page(url, depth=2):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
